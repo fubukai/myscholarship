@@ -1,0 +1,129 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<style>
+
+@font-face {
+   font-family: 'Mitr';
+   src: url('/static/assets/fonts/Ubuntu/Mitr-Regular.ttf');
+}
+
+.block_info {
+    /* display: flex; */
+    background-color: white;
+    border-radius: 10px; 
+    color: black;
+    font-weight: bold;
+    margin: 0px 33px 10px 33px;
+    padding: 21px;
+    font-family: 'Mitr';
+    font-size: larger;
+  }
+
+.backdrop_profile {
+    background-color: #f8f8f8;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    color: black;
+    font-family: 'Mitr';
+    font-size: larger;
+    padding-bottom: 60px;
+}
+    .backdrop_profile_head{
+        font-family: 'Mitr';
+        padding: 48px 0px 23px 29px;
+        font-size: 36px;
+    }
+
+.text_main {
+    margin-left: 54px;
+}
+
+.row_head {
+    background-color: #7d3486;
+    color: white;
+    text-align: center;
+    border-color: white;
+    border-radius: 4px;
+    margin: 4.5px;
+    padding: 15px 0px 15px 0px;
+}
+
+.row_body {
+    background-color: #dcdcdc;
+    border-radius: 4px;
+    margin: 4.5px;
+}
+
+.dropdown_profile {
+    text-align: left;
+    width: 70%;
+}
+
+.small_font {
+    font-weight: lighter;
+    font-size: 12px !important;
+    color: #767676;
+    margin-left: 64px;
+}
+
+</style>
+
+<div class="backdrop_profile">
+    <div class="backdrop_profile_head">
+        สมัครขึ้นทะเบียนวิทยากรภายใน
+    </div>
+
+<!-- first block -->
+    <div class="block_info">
+        <div class="row">
+            <div class="col-12">
+                <a href="{% url 'record' %}"><img style="padding-left: 21px; margin-right: 7px;" src="/static/assets/images/add.svg"/><u>เพิ่มด้านการบรรยาย</u></a>
+            </div>
+        </div>
+    </div>
+
+<!-- out of block -->
+    <div class="col text-center">
+        <a class="btn btn-outline-primary" href="{% url 'apply' %}" >ย้อนกลับ</a>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#conmodal">ยืนยัน</button>
+    </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="conmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <!-- <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div> -->
+        <div class="modal-body text-center">
+            <img src="/static/assets/images/con.svg" alt="confirm">
+            <div style="font-size: 24px;">ต้องการส่งข้อมูล</div>
+        </div>
+        <div class="modal-footer text-center">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#successmodal" data-dismiss="modal">ตกลง</button>
+            <button type="button" class="btn btn-outline-primary" data-dismiss="modal">ยกเลิก</button>
+        </div>
+      </div>
+    </div>
+</div>
+
+<div class="modal fade" id="successmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body text-center">
+            <img src="/static/assets/images/correct.svg" alt="success">
+            <div style="font-size: 24px;">ส่งข้อมูลสำเร็จ</div>
+        </div>
+        <div class="modal-footer text-center">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">ตกลง</button>
+        </div>
+      </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,373 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<style>
+
+@font-face {
+   font-family: 'Mitr';
+   src: url('/static/assets/fonts/Ubuntu/Mitr-Regular.ttf');
+}
+
+.block_info {
+    /* display: flex; */
+    background-color: white;
+    border-radius: 10px; 
+    color: black;
+    font-weight: bold;
+    margin: 0px 33px 10px 33px;
+    padding: 21px;
+    font-family: 'Mitr';
+    font-size: larger;
+  }
+
+.backdrop_profile {
+    background-color: #f8f8f8;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    color: black;
+    font-family: 'Mitr';
+    font-size: larger;
+    padding-bottom: 60px;
+}
+    .backdrop_profile_head{
+        font-family: 'Mitr';
+        padding: 48px 0px 23px 29px;
+        font-size: 36px;
+    }
+
+.text_main {
+    margin-left: 54px;
+}
+
+.row_head {
+    background-color: #7d3486;
+    color: white;
+    text-align: center;
+    border-color: white;
+    border-radius: 4px;
+    margin: 4.5px;
+    padding: 15px 0px 15px 0px;
+}
+
+.row_body {
+    background-color: #dcdcdc;
+    border-radius: 4px;
+    margin: 4.5px;
+}
+
+.dropdown_profile {
+    text-align: left;
+    width: 70%;
+}
+
+.small_font {
+    font-weight: lighter;
+    font-size: 12px !important;
+    color: #767676;
+    margin-left: 64px;
+}
+
+.table_width {
+    width: 80%;
+    margin-left: 64px;
+}
+</style>
+
+<div class="content-wrapper">
+    <div class="page-header">
+        <h3>สมัครขึ้นทะเบียนวิทยากรภายใน</h3>
+    </div>
+
+    <!-- first block -->
+    <form method="POST">
+        <div class="col-12 grid-margin stretch-card">
+            <!-- <div style="margin-left: 41px;">ติดตามสถานะ :</div> -->
+            <!-- <p style="margin-left: 64px; font-size: 14px; font-weight: lighter;">สามารถกรอกได้ทั้งภายนอก ภายในหน่วยงานและการนำเสนอบทความ ในช่วง 5 ปีที่ผ่านมา (ต้องเกี่ยวข้องกับด้านที่ต้องการขึ้นทะเบียน และมีความเชี่ยวชาญ เท่านั้น) พร้อมระบุขอบเขต / หัวข้อวิชาที่มีความรู้ ที่มีความเชี่ยวชาญในด้านนั้นๆ </p> -->
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <h5><b>ประสบการณ์บรรยาย</b></h5>
+                            <p>สามารถกรอกได้ทั้งภายนอก ภายในหน่วยงานและการนำเสนอบทความ ในช่วง 5 ปีที่ผ่านมา (ต้องเกี่ยวข้องกับด้านที่ต้องการขึ้นทะเบียน และมีความเชี่ยวชาญ เท่านั้น) พร้อมระบุขอบเขต / หัวข้อวิชาที่มีความรู้ ที่มีความเชี่ยวชาญในด้านนั้นๆ </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <select class="btn btn-primary" id="Experian" name="Experian">
+                                <option value="0">เลือกด้านที่ต้องการขึ้นทะเบียน</option>
+                                <option value="1.">1. ด้านการก่อสร้างสถานีไฟฟ้าและระบบไฟฟ้า</option>
+                                <option value="2.">2. ด้านการบำรุงรักษาสถานีไฟฟ้าและระบบไฟฟ้า</option>
+                                <option value="3.">3. ด้านการควบคุมการจ่ายไฟฟ้า</option>
+                                <option value="4.">4. ด้าน Hotline</option>
+                                <option value="5.">5. ด้านเทคโนโลยีสารสนเทศ และ นวัตกรรม (Innovation)</option>
+                                <option value="6.">6. ด้านการกำกับดูแลกิจการที่ดี การบริหารความเสี่ยง การปฏิบัติตามกฎระเบียบข้อบังคับ (GRC) และ การจัดการเชิงนโยบายและยุทธศาสตร์</option>
+                                <option value="7.">7. ด้านภาษาต่างประเทศ</option>
+                                <option value="8.">8. ด้านการกำกับบริษัทลูกและบริษัทร่วมทุน โครงการ และการลงทุน (Portfolio Management)</option>
+                                <option value="9.">9. ด้านการจัดหาและผลิตพลังงานไฟฟ้า และการจัดการด้านพลังงาน</option>
+                                <option value="10.">10. ด้านการวางแผนและพัฒนาระบบไฟฟ้า</option>
+                                <option value="11.">11. ด้านการออกแบบสถานีไฟฟ้าและระบบไฟฟ้า</option>
+                                <option value="12.">12. ด้านการตลาด การสร้างความสัมพันธ์ลูกค้า และการบริการลูกค้า</option>
+                                <option value="13.">13. ด้านการจัดการพัสดุ การบริหารจัดการผู้ส่งมอบ คู่ค้าและคู่ความร่วมมือ และการจัดการ logistics</option>
+                                <option value="14.">14. ด้านงบประมาณ บัญชีและการเงิน</option>
+                                <option value="15.">15. ด้านทรัพยากรบุคคล และการจัดการความรู้</option>
+                                <option value="16.">16. ด้านการประชาสัมพันธ์ และ CSR</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <h5><b>ขอบเขต/หัวข้อวิชาที่มีความรู้ ที่มีความเชี่ยววชาญ</b></h5>
+                            <p>โดยให้ระบุ ขอบเขต/หัวข้อวิชาที่มีความรู้ ที่มีความเชี่ยววชาญ เรียงลำดับจากที่ท่านเชี่ยวชาญที่สุดเป็นลำดับที่ 1 จะต้องมีอย่างน้อย 1 หัวข้อ ใส่ได้สูงสุด 5 หัวข้อ</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2 text-center">
+                            <label>ลำดับที่ 1:</label>
+                        </div>
+                        <div class="col-6">
+                            <input type="text" class="form-control" id="hashtag1" name="hashtag1" placeholder="hashtag">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2 text-center">
+                            <label>ลำดับที่ 2:</label>
+                        </div>
+                        <div class="col-6">
+                            <input type="text" class="form-control" id="hashtag2" name="hashtag2" placeholder="hashtag">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2 text-center">
+                            <label>ลำดับที่ 3:</label>
+                        </div>
+                        <div class="col-6">
+                            <input type="text" class="form-control" id="hashtag3" name="hashtag3" placeholder="hashtag">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2 text-center">
+                            <label>ลำดับที่ 4:</label>
+                        </div>
+                        <div class="col-6">
+                            <input type="text" class="form-control" id="hashtag4" name="hashtag4" placeholder="hashtag">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2 text-center">
+                            <label>ลำดับที่ 5:</label>
+                        </div>
+                        <div class="col-6">
+                            <input type="text" class="form-control" id="hashtag5" name="hashtag5" placeholder="hashtag">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 grid-margin stretch-card">
+            <!-- <div style="margin-left: 41px;">ติดตามสถานะ :</div> -->
+            <!-- <p style="margin-left: 64px; font-size: 14px; font-weight: lighter;">สามารถกรอกได้ทั้งภายนอก ภายในหน่วยงานและการนำเสนอบทความ ในช่วง 5 ปีที่ผ่านมา (ต้องเกี่ยวข้องกับด้านที่ต้องการขึ้นทะเบียน และมีความเชี่ยวชาญ เท่านั้น) พร้อมระบุขอบเขต / หัวข้อวิชาที่มีความรู้ ที่มีความเชี่ยวชาญในด้านนั้นๆ </p> -->
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-8">
+                            <h5><b>ประวัติการบรรยาย</b></h5>
+                            <p>*ต้องมีการบรรยายอย่างน้อย 3 ครั้งใน 1 ด้าน</p>
+                        </div>
+                        <div class="col-4">
+                            <a href="#" data-toggle="modal" data-target="#addModal"><img style="padding-left: 64px; margin-right: 7px;" src="/static/assets/images/add.svg"/><u>เพิ่มหลักสูตร</u></a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <!-- <div class="table_width"> -->
+                                <table class="table table-bordered">
+                                    <thead>  
+                                        <tr class="row_head">
+                                            <th class="col-sm-1">#</th>
+                                            <th class="col-sm-4">หลักสูตร</th>
+                                            <th class="col-sm-3">หัวข้อบรรยาย</th>
+                                            <th class="col-2">หน่วยงานที่จัด</th>
+                                            <th class="col-1">ครั้ง</th>
+                                            <th class="col-sm-1">ช่วงปีที่บรรยาย</th>
+                                            <th class="col-1">เอกสารแนบ</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center">1.</td>
+                                            <td>aaaa</td>
+                                            <td>bbbb</td>
+                                            <td>cccc</td>
+                                            <td>2</td>
+                                            <td>2563-2565</td>
+                                            <td>ffff</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            <!-- </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 text-center">
+                <a href="{% url 'regis' %}" class="btn btn-outline-primary" >ย้อนกลับ</a>
+                <!-- <button type="button" class="btn btn-primary">ยืนยัน</button> -->
+                <input type="submit" class="btn btn-primary" value="ยืนยัน" />
+            </div>
+        </div>
+
+    </form>
+    <!-- <div class="row">
+        <div>
+        <div>
+            <div style="margin-left: 41px;">ประสบการณ์บรรยาย</div>
+            <p style="margin-left: 64px; font-size: 14px; font-weight: lighter;">สามารถกรอกได้ทั้งภายนอก ภายในหน่วยงานและการนำเสนอบทความ ในช่วง 5 ปีที่ผ่านมา (ต้องเกี่ยวข้องกับด้านที่ต้องการขึ้นทะเบียน และมีความเชี่ยวชาญ เท่านั้น) พร้อมระบุขอบเขต / หัวข้อวิชาที่มีความรู้ ที่มีความเชี่ยวชาญในด้านนั้นๆ </p>
+        </div>
+        <div class="row">
+            <button class="btn btn-outline-secondary dropdown-toggle dropdown_profile" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            เลือกด้านที่ต้องการขึ้นทะเบียน
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">1.</a>
+            <a class="dropdown-item" href="#">2.</a>
+            <a class="dropdown-item" href="#">6. ด้านการกากับดูแลกิจการที่ดี การบริหารความเสี่ยง การปฏิบัติตามกฎระเบียบข้อบังคับ (GRC) และ การจัดการเชิงนโยบายและยุทธศาสตร์</a>
+            </div>
+            <div class="col-2"></div>
+            <div class="col-6">
+                <select class="btn btn-primary" id="Experian" name="Experian">
+                    <option value="0">เลือกด้านที่ต้องการขึ้นทะเบียน</option>
+                    <option value="1.">1. ด้านการก่อสร้างสถานีไฟฟ้าและระบบไฟฟ้า</option>
+                    <option value="2.">2. ด้านการบำรุงรักษาสถานีไฟฟ้าและระบบไฟฟ้า</option>
+                    <option value="3.">3. ด้านการควบคุมการจ่ายไฟฟ้า</option>
+                    <option value="4.">4. ด้าน Hotline</option>
+                    <option value="5.">5. ด้านเทคโนโลยีสารสนเทศ และ นวัตกรรม (Innovation)</option>
+                    <option value="6.">6. ด้านการกำกับดูแลกิจการที่ดี การบริหารความเสี่ยง การปฏิบัติตามกฎระเบียบข้อบังคับ (GRC) และ การจัดการเชิงนโยบายและยุทธศาสตร์</option>
+                    <option value="7.">7. ด้านภาษาต่างประเทศ</option>
+                    <option value="8.">8. ด้านการกำกับบริษัทลูกและบริษัทร่วมทุน โครงการ และการลงทุน (Portfolio Management)</option>
+                    <option value="9.">9. ด้านการจัดหาและผลิตพลังงานไฟฟ้า และการจัดการด้านพลังงาน</option>
+                    <option value="10.">10. ด้านการวางแผนและพัฒนาระบบไฟฟ้า</option>
+                    <option value="11.">11. ด้านการออกแบบสถานีไฟฟ้าและระบบไฟฟ้า</option>
+                    <option value="12.">12. ด้านการตลาด การสร้างความสัมพันธ์ลูกค้า และการบริการลูกค้า</option>
+                    <option value="13.">13. ด้านการจัดการพัสดุ การบริหารจัดการผู้ส่งมอบ คู่ค้าและคู่ความร่วมมือ และการจัดการ logistics</option>
+                    <option value="14.">14. ด้านงบประมาณ บัญชีและการเงิน</option>
+                    <option value="15.">15. ด้านทรัพยากรบุคคล และการจัดการความรู้</option>
+                    <option value="16.">16. ด้านการประชาสัมพันธ์ และ CSR</option>
+                    
+                </select>
+            </div>
+        </div>
+        <div>
+            <p style="margin: 21px 0px 21px 64px; font-size: 18px;">ขอบเขต/หัวข้อวิชาที่มีความรู้ ที่มีความเชี่ยววชาญ</p>
+        </div>
+        <div style="margin: 21px 0px 21px 64px;" class="row">
+            <input type="text" class="form-control col-2" id="hashtag1" placeholder="hashtag">
+            <input type="text" class="form-control col-2" id="hashtag2" placeholder="hashtag">
+            <input type="text" class="form-control col-2" id="hashtag3" placeholder="hashtag">
+            <input type="text" class="form-control col-2" id="hashtag4" placeholder="hashtag">
+            <input type="text" class="form-control col-2" id="hashtag5" placeholder="hashtag">
+        </div>
+        <div class="small_font"><em> *ต้องมีการบรรยายอย่างน้อย 3 ครั้งใน 1 ด้าน</em></div>
+        <div class="table_width">
+            <table class="table table-bordered">
+                <thead>  
+                    <tr class="row_head">
+                        <th class="col-sm-4">หลักสูตร</th>
+                        <th class="col-sm-3">หัวข้อบรรยาย</th>
+                        <th class="col-2">หน่วยงานที่จัด</th>
+                        <th class="col-1">ครั้ง</th>
+                        <th class="col-sm-1">ปี</th>
+                        <th class="col-1">เอกสารแนบ</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th><input type="text" class="form-control" id="" placeholder="หลักสูตร"></th>
+                        <th><input type="text" class="form-control" id="" placeholder="หัวข้อบรรยาย"></th>
+                        <th><input type="text" class="form-control" id="" placeholder="หน่วยงานที่จัด"></th>
+                        <th><input type="number" class="form-control" id="" placeholder="จำนวนครั้ง"></th>
+                        <th><input type="text" class="form-control" id="" placeholder="ปี"></th>
+                        <th><input type="text" class="form-control" id="" placeholder="ไฟล์"></th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <a href="#" data-toggle="modal" data-target="#addModal"><img style="padding-left: 64px; margin-right: 7px;" src="/static/assets/images/add.svg"/><u>เพิ่มหลักสูตร</u></a>
+        </div>
+    </div> -->
+
+</div>
+
+<!-- out of block -->
+    <!-- <div class="col text-center">
+        <a href="/regis"><button type="button" class="btn btn-outline-primary">ย้อนกลับ</button></a>
+        <button type="button" class="btn btn-primary">ยืนยัน</button>
+    </div>
+</div> -->
+
+<!-- Modal -->
+<div class="modal" id="addModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">แนบวุฒิการศึกษาเพิ่มเติม</h5>
+          <img class="close" data-dismiss="modal" aria-label="Close" src="/static/assets/images/close.svg"/>
+          <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close"> -->
+            <!-- <span aria-hidden="true">&times;</span> -->
+          </button>
+        </div>
+        <div class="modal-body">
+          <div>
+                <table class="table table-bordered">
+                    <thead>  
+                        <tr class="row_head">
+                            <th class="col-sm-4">หลักสูตร</th>
+                            <th class="col-sm-4">หัวข้อบรรยาย</th>
+                            <th class="col-2">หน่วยงานที่จัด</th>
+                            <th class="col-1">จำนวนครั้ง</th>
+                            <th class="col-sm-1">ปี</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th><input type="text" class="form-control" id="Course_name" placeholder="หลักสูตร"></th>
+                            <th><input type="text" class="form-control" id="Course_details" placeholder="หัวข้อบรรยาย"></th>
+                            <th><input type="text" class="form-control" id="Course_division" placeholder="หน่วยงานที่จัด"></th>
+                            <th><input type="number" class="form-control" id="Course_number" placeholder="จำนวนครั้ง"></th>
+                            <th><input type="text" class="form-control" id="Course_startyear" placeholder="ปี"></th>
+                        </tr>
+                    </tbody>
+                </table>
+
+          </div>
+          <div>
+                <div>
+                    <div style="font-size: 14px; font-weight: bold;">เอกสารหลักฐานแนบ (ถ้ามี)<span style="font-size: 14px;">.pdf .png หรือ .jpg เท่านั้น (max. 5 mb.) สูงสด 1 ไฟล์</span></div>
+                    
+                </div>
+                <div>
+                    <button type="button" class="btn btn-outline-primary"><img src="/static/assets/images/upload.svg" alt="upload"> upload</button>
+                    <input type="hidden" id="url1" name="url1"/>
+                    <span style="font-size: 12px; color: #767676;">*เช่น หนังสือหรือบันทึกเชิญ / รูปถ่ายการบรรยาย</span>
+                </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary">ยืนยัน</button>
+        </div>
+      </div>
+    </div>
+</div>
+
+{% endblock %}

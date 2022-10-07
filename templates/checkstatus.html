@@ -1,0 +1,138 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<style>
+
+@font-face {
+   font-family: 'Mitr';
+   src: url('/static/assets/fonts/Ubuntu/Mitr-Regular.ttf');
+}
+
+.block_info {
+    /* display: flex; */
+    background-color: white;
+    border-radius: 10px; 
+    color: black;
+    font-weight: bold;
+    margin: 0px 33px 10px 33px;
+    padding: 21px;
+    font-family: 'Mitr';
+    font-size: larger;
+  }
+
+.backdrop_profile {
+    background-color: #f8f8f8;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    color: black;
+    font-family: 'Mitr';
+    font-size: larger;
+    padding-bottom: 60px;
+}
+    .backdrop_profile_head{
+        font-family: 'Mitr';
+        padding: 48px 0px 23px 29px;
+        font-size: 36px;
+    }
+
+.text_main {
+    margin-left: 54px;
+}
+
+.row_head {
+    background-color: #7d3486;
+    color: white;
+    text-align: center;
+    border-color: white;
+    border-radius: 4px;
+    margin: 4.5px;
+    padding: 15px 0px 15px 0px;
+}
+
+.row_body {
+    background-color: #dcdcdc;
+    border-radius: 4px;
+    margin: 4.5px;
+}
+
+.dropdown_profile {
+    text-align: left;
+    width: 70%;
+}
+
+.small_font {
+    font-weight: lighter;
+    font-size: 12px !important;
+    color: #767676;
+    margin-left: 64px;
+}
+
+.table_width {
+    width: 80%;
+    margin-left: 64px;
+}
+</style>
+
+<div class="content-wrapper">
+    <div class="page-header">
+        <!-- สมัครขึ้นทะเบียนวิทยากรภายใน -->
+        <h3>ติดตามสถานะ :</h3>
+    </div>
+
+<!-- first block -->
+    <div class="row">
+        <div class="col-12 grid-margin stretch-card">
+            <!-- <div style="margin-left: 41px;">ติดตามสถานะ :</div> -->
+            <!-- <p style="margin-left: 64px; font-size: 14px; font-weight: lighter;">สามารถกรอกได้ทั้งภายนอก ภายในหน่วยงานและการนำเสนอบทความ ในช่วง 5 ปีที่ผ่านมา (ต้องเกี่ยวข้องกับด้านที่ต้องการขึ้นทะเบียน และมีความเชี่ยวชาญ เท่านั้น) พร้อมระบุขอบเขต / หัวข้อวิชาที่มีความรู้ ที่มีความเชี่ยวชาญในด้านนั้นๆ </p> -->
+            <div class="card">
+                <div class="card-body">
+                    <br>
+                    <div class="row">
+                        <div class="col-3 grid-margin text-center">
+                            <button type="button" class="btn btn-social-icon btn-gradient-primary btn-rounded btn-icon">
+                                <i class="mdi mdi-check-outline"></i>
+                            </button>
+                            <br>
+                            <label>1.ยืนยันการสมัคร</label>
+                        </div>
+                        <div class="col-3 grid-margin text-center">
+                            <button type="button" class="btn btn-social-icon btn-gradient-secondary btn-rounded btn-icon">
+                                <i class="mdi mdi-account-check-outline"></i>
+                            </button>
+                            <br>
+                            <label>2.ผู้บริหารยืนยันข้อมูล</label>
+                        </div>
+                        <div class="col-3 grid-margin text-center">
+                            <button type="button" class="btn btn-social-icon btn-gradient-secondary btn-rounded btn-icon">
+                                <i class="mdi mdi-timer-sand"></i>
+                            </button>
+                            <br>
+                            <label>3.รอพิจารณาขึ้นทะเบียน</label>
+                        </div>
+                        <div class="col-3 grid-margin text-center">
+                            <button type="button" class="btn btn-social-icon btn-gradient-secondary btn-rounded">
+                                <i class="mdi mdi-account-star-outline"></i>
+                            </button>
+                            <br>
+                            <label>4.แจ้งผลการสมัคร</label>
+                        </div>
+                    </div>
+                    <br>
+                    <div>
+                        <div class="col text-center">
+                            <a class="btn btn-outline-primary" href="{% url 'home' %}">กลับหน้าหลัก</a>
+                            <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#conmodal">ยืนยัน</button> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- out of block -->
+    
+
+
+
+{% endblock %}

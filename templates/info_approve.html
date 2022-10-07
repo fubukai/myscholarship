@@ -1,0 +1,242 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<style>
+
+@font-face {
+   font-family: 'Mitr';
+   src: url('/static/assets/fonts/Ubuntu/Mitr-Regular.ttf');
+}
+
+.block_info {
+    display: flex;
+    background-color: white;
+    border-radius: 10px;
+    color: black;
+    font-weight: bold;
+    margin: 0px 33px 10px 33px;
+    padding: 21px;
+    font-family: 'Mitr';
+    font-size: larger;
+  }
+    .block_info_sub {
+        /* padding: 0px 21px 0px 21px; */
+        margin: 0px 0px 0px 33px;
+  }
+
+.backdrop_profile {
+    background-color: #f8f8f8;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    color: black;
+    font-family: 'Mitr';
+    font-size: larger;
+    padding-bottom: 60px;
+}
+    .backdrop_profile_head{
+        font-family: 'Mitr';
+        padding: 48px 0px 23px 29px;
+        font-size: 36px;
+    }
+
+.text_main {
+    margin-left: 54px;
+}
+.table{
+    padding: 0px 0px 0px 0px;
+}
+.row_head {
+    background-color: #7d3486;
+    color: white;
+    text-align: center;
+    border-color: white;
+}
+
+.row_body1 {
+    background-color:lightgray;
+    color: black;
+}
+
+.small_font {
+    font-weight: lighter;
+    font-size: 12px !important;
+    color: #312F2C;
+    margin-bottom: 12px;
+}
+input::placeholder{
+  color: #f00;
+}
+.head_font {
+    font-size: 12px; 
+    margin-bottom: 12px;
+}
+.modal {
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+	align-items: 'center';
+    padding: 0% 25% 0% 25%;
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 25px;
+}
+</style>
+
+<div class="backdrop_profile">
+    <div class="backdrop_profile_head">
+        สมัครขึ้นทะเบียนวิทยากรภายใน
+    </div>
+
+<!-- first block -->
+
+    <div class="block_info">
+        <div>
+            <img src="/static/assets/images/profile.svg"/>
+            <div class="">
+                <img src="/static/assets/images/call.svg"/>
+                <span style="font-weight: lighter; font-size: 12px; margin-bottom: 12px; color: #312F2C;">5858</span>
+            </div>
+            <div class="">
+                <img src="/static/assets/images/mail.svg"/>
+                <span style="font-weight: lighter; font-size: 12px; margin-bottom: 12px; color: #312F2C;">E-mail</span>
+            </div>
+        </div>
+
+        <div class="container block_info_sub">
+            <div class="row">
+                <div class="col-12">
+                    <div style="font-size: 24px; margin-bottom: 0px;">นาย เอกสิทธิ์ เมืองคุ้ม</div>
+                    <div style="font-size: 16px; color: #767676;">Mr. Ekasith Muangkoom</div>
+                </div>
+                <div class="col-1">
+                    <div class="head_font">รหัสพนักงาน</div>
+                    <div class="head_font">ตำแหน่ง</div>
+                    <div class="head_font">สังกัด</div>
+                </div>
+                <div class="col-4">
+                    <div class="small_font">503710</div>
+                    <div class="small_font">นักระบบงานคอมพิวเตอร์ ระดับ 6(นรค.6)</div>
+                    <div class="small_font">แผนกจัดการความรู้ (ผจค . กพค. ฝพบ. รผก.(บก))</div>
+                </div>
+                <div class="col-1">
+                    <div class="head_font">วันที่บรรจุ</div>
+                    <div class="head_font">อายุงาน</div>
+                </div>
+                <div class="col">
+                    <div class="small_font">1 เมษายน 2561</div>
+                    <div class="small_font">3 ปี 7 เดือน</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- second block -->
+    <div class="block_info">
+    <div class="modal-body">
+        <div>
+            <p>1.ด้านการก่อสร้างสถานีไฟฟ้าและระบบไฟฟ้า</p>
+            <p>ขอบเขต / หัวข้อวิชาที่มีความรู้ ความเชี่ยวชาญ</p>
+            <table class="table table-bordered">
+                <thead>  
+                    <tr class="row_head">
+                        <th class="col-sm-4">หลักสูตร</th>
+                        <th class="col-sm-4">หัวข้อบรรยาย</th>
+                        <th class="col-sm-2">หน่วยงานที่จัด</th>
+                        <th class="col-sm-2">จำนวนครั้ง</th>
+                        <th class="col-sm-2">ปี</th>
+                        <th class="col-sm-2">เอกสารแนบ</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th class="row_body1" style="text-align: center;" >งานออกแบบ</th>
+                        <th class="row_body1" style="text-align: center;">งานสายส่ง</th>
+                        <th class="row_body1" style="text-align: center;">ฝสฝ.</th>
+                        <th class="row_body1" style="text-align: center;">5</th>
+                        <th class="row_body1" style="text-align: center;">2562-2563</th>
+                        <th class="row_body1" style="text-align: center;"><a href="#" target="_blank">บันทึกเชิญ.pdf</a></th>
+                    </tr>
+                </tbody>
+                {% for course in course %}
+                <tbody>
+                    <tr>
+                        <th class="row_body1" style="text-align: center;">{{course.Course_name}}</th>
+                        <th class="row_body1" style="text-align: center;">{{course.Course_details}}</th>
+                        <th class="row_body1" style="text-align: center;">{{course.Course_division}}</th>
+                        <th class="row_body1" style="text-align: center;">{{course.Course_number}}</th>
+                        <th class="row_body1" style="text-align: center;">{{course.Course_startyear}} - {{course.Course_startyear}}</th>
+                        <th class="row_body1" style="text-align: center;"><a href="{{course.Course_filelink}}" target="_blank">{{course.Course_filename}}</a></th>
+                    </tr>
+                </tbody>
+                {% endfor %}
+            </table>
+
+        </div>
+    </div> 
+    </div>
+    {% for Experian in Experian %}
+    <div class="block_info">
+        <div class="modal-body">
+            <div>
+                <p>{{ forloop.counter }} . {{Experian.Experian_name}}</p>
+                <p>ขอบเขต / หัวข้อวิชาที่มีความรู้ ความเชี่ยวชาญ {{Experian.scope_1}} {{Experian.scope_2}} {{Experian.scope_3}} {{Experian.scope_4}} {{Experian.scope_5}}</p>
+                <table class="table table-bordered">
+                    <thead>  
+                        <tr class="row_head">
+                            <th class="col-sm-4">หลักสูตร</th>
+                            <th class="col-sm-4">หัวข้อบรรยาย</th>
+                            <th class="col-sm-2">หน่วยงานที่จัด</th>
+                            <th class="col-sm-2">จำนวนครั้ง</th>
+                            <th class="col-sm-2">ปี</th>
+                            <th class="col-sm-2">เอกสารแนบ</th>
+                        </tr>
+                    </thead>
+                    {% for course in course %}
+                    <tbody>
+                        <tr>
+                            <th class="row_body1" style="text-align: center;">{{course.Course_name}}</th>
+                            <th class="row_body1" style="text-align: center;">{{course.Course_details}}</th>
+                            <th class="row_body1" style="text-align: center;">{{course.Course_division}}</th>
+                            <th class="row_body1" style="text-align: center;">{{course.Course_number}}</th>
+                            <th class="row_body1" style="text-align: center;">{{course.Course_startyear}} - {{course.Course_startyear}}</th>
+                            <th class="row_body1" style="text-align: center;"><a href="{{course.Course_filelink}}" target="_blank">{{course.Course_filename}}</a></th>
+                        </tr>
+                    </tbody>
+                    {% endfor %}
+                </table>
+    
+            </div>
+        </div> 
+        </div>
+        {% endfor %}
+        
+    <div class="col text-center">
+        <button type="button" class="btn btn-primary">ส่งแก้ไข</button>
+        <a href="#" data-toggle="modal" data-target="#addModal"><button type="button" class="btn btn-primary">ยืนยัน</button></a>
+    </div>
+<!-- Modal -->
+<div class="modal" id="addModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title">ยืนยันวิทยากรภายใน</h2>
+          <img class="close" data-dismiss="modal" aria-label="Close" src="/static/assets/images/close.svg"/>
+          <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close"> -->
+            <!-- <span aria-hidden="true">&times;</span> -->
+          </button>
+        </div>
+        <div>
+            <img src="/static/assets/images/sprites/pngegg.png" width=20% height=20% class="center">
+        </div>
+        <div class="modal-footer">
+          <a href="#"><button type="button" class="btn btn-primary center col-sm-4">ยีนยัน</button></a>
+          <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+        </div>
+      </div>
+    </div>
+</div>
+
+{% endblock %}

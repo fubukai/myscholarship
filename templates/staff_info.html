@@ -1,0 +1,363 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<style>
+
+@font-face {
+   font-family: 'Mitr';
+   src: url('/static/assets/fonts/Ubuntu/Mitr-Regular.ttf');
+}
+
+.block_info {
+    display: flex;
+    background-color: white;
+    border-radius: 10px;
+    color: black;
+    font-weight: bold;
+    margin: 0px 33px 10px 33px;
+    padding: 21px;
+    font-family: 'Mitr';
+    font-size: larger;
+  }
+    .block_info_sub {
+        /* padding: 0px 21px 0px 21px; */
+        margin: 0px 0px 0px 33px;
+  }
+
+.backdrop_profile {
+    background-color: #f8f8f8;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    color: black;
+    font-family: 'Mitr';
+    font-size: larger;
+    padding-bottom: 60px;
+}
+    .backdrop_profile_head{
+        font-family: 'Mitr';
+        padding: 48px 0px 23px 29px;
+        font-size: 36px;
+    }
+
+.text_main {
+    margin-left: 54px;
+}
+
+.row_head {
+    background-color: #7d3486;
+    color: white;
+    text-align: center;
+    border-color: white;
+    border-radius: 4px;
+    margin: 4.5px;
+    padding: 15px 0px 15px 0px;
+}
+
+.row_body {
+    background-color: #dcdcdc;
+    border-radius: 4px;
+    margin: 4.5px;
+}
+
+.small_font {
+    font-weight: lighter;
+    font-size: 12px !important;
+    color: #312F2C;
+    margin-bottom: 12px;
+}
+
+.head_font {
+    font-size: 12px; 
+    margin-bottom: 12px;
+}
+.myclass + label {
+    background-color: indigo;
+    color: white;
+    padding: 0.5rem;
+    font-family: sans-serif;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+.myclass:focus + label,
+.myclass + label:hover {
+    background-color: purple;
+}
+.myclass {
+	width: 0.1px;
+	height: 0.5px;
+    margin: 4.5px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+</style>
+
+<div class="backdrop_profile">
+    <div class="backdrop_profile_head">
+        สมัครขึ้นทะเบียนวิทยากรภายใน
+    </div>
+
+<!-- first block -->
+
+    <div class="block_info">
+        <div>
+            <img src="/static/assets/images/profile.svg"/>
+            <div class="">
+                <img src="/static/assets/images/call.svg"/>
+                <span style="font-weight: lighter; font-size: 12px; margin-bottom: 12px; color: #312F2C;">5858</span>
+            </div>
+            <div class="">
+                <img src="/static/assets/images/mail.svg"/>
+                <span style="font-weight: lighter; font-size: 12px; margin-bottom: 12px; color: #312F2C;">E-mail</span>
+            </div>
+        </div>
+
+        <div class="container block_info_sub">
+            <div class="row">
+                <div class="col-12">
+                    <div style="font-size: 24px; margin-bottom: 0px;">นาย เอกสิทธิ์ เมืองคุ้ม</div>
+                    <div style="font-size: 16px; color: #767676;">Mr. Ekasith Muangkoom</div>
+                </div>
+                <div class="col-2">
+                    <div class="head_font">รหัสพนักงาน</div>
+                    <div class="head_font">ตำแหน่ง</div>
+                    <div class="head_font">สังกัด</div>
+                </div>
+                <div class="col-4">
+                    <div class="small_font">503710</div>
+                    <div class="small_font">นักระบบงานคอมพิวเตอร์ ระดับ 6(นรค.6)</div>
+                    <div class="small_font">แผนกจัดการความรู้ (ผจค . กพค. ฝพบ. รผก.(บก))</div>
+                </div>
+                <div class="col-1">
+                    <div class="head_font">วันที่บรรจุ</div>
+                    <div class="head_font">อายุงาน</div>
+                </div>
+                <div class="col">
+                    <div class="small_font">1 เมษายน 2561</div>
+                    <div class="small_font">3 ปี 7 เดือน</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- second block -->
+
+    <div class="block_info">
+        <div class="row">
+            <div class="col-12">
+                <div style="font-size: 24px; padding-left: 21px;">ประวัติการศึกษา</div>
+                <div style="font-size: 12px; padding: 0px 0px 0px 21px; color: #949391;">ศิลปศาสตรบัณฑิต การสื่อสารเพื่อการจัดการนวัตกรรม (วุฒิจ้าง)(ดึงจากระบบ)</div>
+                {% for data in get_education %}
+                <div class="row">
+                    <div class="col-3" style="font-size: 16px; color: #767676; padding: 0px 0px 0px 42px;">{{ data.university }}</div>
+                    <div class="col-3" style="font-size: 16px; color: #767676;">{{ data.department }}</div>
+                    <div class="col-3" style="font-size: 16px; color: #767676;">{{ data.degree_level }}</div>
+                    <div class="col-1" style="font-size: 16px; color: #767676;">{{ data.degree_year }}</div>
+                    <a href='{{ data.upload_doc }}' target="_blank" download><div class="col-2" style="font-size: 16px; color: #767676;">หลักฐาน</div></a>
+                </div>
+                {% endfor %}
+                <a href="#" data-toggle="modal" data-target="#addModal"><img style="padding-left: 21px; margin-right: 7px;" src="/static/assets/images/add.svg"/><u>แนบวุฒิการศึกษาเพิ่มเติม</u></a>
+            </div>
+        </div>
+    </div>
+    <div class="">
+        <div style="font-size: 12px; margin: 30px 0px 0px 54px; color: #767676; padding-bottom: 30px; font-style: italic;">* กรณีที่ข้อมูลส่วนตัวผิดพลาด สามารถติดต่อแก้ไขที่ได้กองบริหารงานบุคคล (กงบ.) เบอร์โทรภายใน. 5888</div>
+    </div>
+    <div class="col text-center">
+        <a href="{% url 'regis' %}"><button type="button" class="btn btn-primary">ยืนยันข้อมูลส่วนบุคคล</button></a>
+    </div>
+</div>
+
+<!-- Modal -->
+
+<div class="modal" id="addModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <form method="POST" class="forms-sample" enctype = "multipart/form-data" accept-charset="utf-8">
+        {% csrf_token %}
+        <div class="modal-header">
+          <h5 class="modal-title">แนบวุฒิการศึกษาเพิ่มเติม</h5>
+          <img class="close" data-dismiss="modal" aria-label="Close" src="/static/assets/images/close.svg"/>
+          <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close"> -->
+            <!-- <span aria-hidden="true">&times;</span> -->
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+                <!-- <div class="container-fluid">
+                    <div class="row">
+                        <div class="row_head col-md-3">ระดับปริญญา</div>
+                        <div class="row_head col-md-6">มหาวิทยาลัย</div>
+                        <div class="row_head col">ปี</div>
+                    </div>
+                    <div class="row">
+                        <div class="row_body dropdown col-md-3">
+                            <button class="btn btn-secondary dropdown-toggle " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                ระดับปริญญา</button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">ปริญญาตรี</a>
+                            <a class="dropdown-item" href="#">ปริญญาโท</a>
+                            <a class="dropdown-item" href="#">ปริญญาเอก</a>
+                            </div>
+                        </div>
+                        <div class="row_body col-md-6"><input type="univercity" class="form-control" id="inputunivercity" placeholder="มหาวิทยาลัย"></div>
+                        <div class="row_body col"><input type="uniyear" class="form-control" id="inputuniyear" placeholder="ปี"></div>
+                    </div>
+                </div> -->
+
+              <table class="table table-bordered">
+                    <thead>  
+                        <tr class="row_head">
+                            <th class="col-sm-2">ระดับปริญญา</th>
+                            <th class="col-sm-4">มหาวิทยาลัย</th>
+                            <th class="col-sm-4">สาขาวิชา</th>
+                            <th class="col-sm-2">ปีที่จบการศึกษา</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td scope="row">
+                                <!-- <div class="dropdown">
+                                    <button class="btn btn-secondary btn-block dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        ระดับปริญญา</button>
+                                    <div class="dropdown-menu btn-block" aria-labelledby="dropdownMenuButton">
+                                      <a class="dropdown-item" href="#">ปริญาตรี</a>
+                                      <a class="dropdown-item" href="#">ปริญาตโท</a>
+                                      <a class="dropdown-item" href="#">ปริญาเอก</a>
+                                    </div>
+                                </div> -->
+                                <!-- <div class="dropdown">
+                                    <select class="btn btn-primary btn-block dropdown-toggle" id="degree_level" name="degree_level">
+                                        <option class="dropdown-item" value="0">ระบุระดับปริญญา</option>
+                                        <option class="dropdown-item" value="ปริญาตรี">ปริญาตรี</option>
+                                        <option class="dropdown-item" value="ปริญาโท">ปริญาโท</option>
+                                        <option class="dropdown-item" value="ปริญาเอก">ปริญาเอก</option>
+                                    </select>
+                                </div> -->
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <select class="form-control btn btn-primary" id="degree_level" name="degree_level" required >
+                                            <option value="0">ระบุระดับปริญญา</option>
+                                            <option value="ปริญาตรี">ปริญาตรี</option>
+                                            <option value="ปริญาโท">ปริญาโท</option>
+                                            <option value="ปริญาเอก">ปริญาเอก</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="university" name="university" placeholder="มหาวิทยาลัย" required>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="department" name="department" placeholder="สาขาวิชา" required>
+                                    </div>
+                                </div>
+                            <td>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="degree_year" name="degree_year" placeholder="ตัวเลข4ตัว" required>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+              </table>
+
+          </div>
+          <div class="row">
+                <div class="col-12">
+                    <label>เอกสารหลักฐานแนบ (ถ้ามี)<span style="font-size: 14px;">.pdf .png หรือ .jpg เท่านั้น (max. 5 mb.) สูงสด 1 ไฟล์</span></label>
+                </div>
+          </div>
+          <div class="row">
+                <div class="col-1 text-center"><label>ชื่อไฟล์</label></div>
+                <div class="col-4"><input class="form-control" type="text" id="doc_name" name="doc_name" placeholder="ชื่อไฟล์" required/></div>
+                <div class="1"></div>
+                <div class="col-6 text-center"> 
+                    <input type="file" name="file" id="file" class="myclass" accept=".jpg, .png, .pdf" hidden/>
+                    <label for="file"><img src="/static/assets/images/upload.svg" alt="upload"/>  แนบไฟล์  </label>
+                    <!-- <span style="font-size: 12px; color: #767676;">*เช่น ปริญญาบัตร</span> -->
+                    <span id="file-chosen">*เช่น ปริญญาบัตร   &emsp;</span>
+                    <button class="btn btn-primary" type="button" onclick="uploadimage()" >Upload File</button>
+                    <input type="hidden" id="url" name="url">
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <input type="submit" class="btn btn-primary" value="ยืนยัน"/>
+          <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+        </div>
+      </div>
+    </form>
+    </div>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-firestore.js"></script>  
+<script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-messaging.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-storage.js"></script>
+
+<script>
+    var firebaseConfig ={
+        apiKey: "AIzaSyCfaAyXaBNbbl2mFyT7_Gfq68omKFcu7lw",
+        authDomain: "pea-speaker.firebaseapp.com",
+        databaseURL: "https://pea-speaker-default-rtdb.firebaseio.com",
+        projectId: "pea-speaker",
+        storageBucket: "pea-speaker.appspot.com",
+        messagingSenderId: "759831263265",
+        appId: "1:759831263265:web:3bd875d3603e6e501f0b60",
+        measurementId: "G-0QW1JGJC8X"
+    };
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+
+    function uploadimage(){
+      var storage = firebase.storage().ref();
+      
+      var file = document.getElementById("file").files[0];
+      var user_name = document.getElementById("doc_name").value;
+      // var storageRef = storage.ref();
+      var thisref = storage.child(user_name+file.name).put(file);
+
+      thisref.on('state_changed',function(snapshot){
+        console.log("file upload successfully");
+        var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+        console.log('Upload is ' + progress + '% done');
+        switch (snapshot.state) {
+          case firebase.storage.TaskState.PAUSED: // or 'paused'
+            console.log('Upload is paused');
+            break;
+          case firebase.storage.TaskState.RUNNING: // or 'running'
+            console.log('Upload is running');
+            break;
+        }
+      },function(error) {
+
+      },function(){
+        thisref.snapshot.ref.getDownloadURL().then(function(downloadURL) {
+      console.log('File available at', downloadURL);
+      document.getElementById("url").value = downloadURL;
+      console.log('url is:', url)
+      alert("อัพโหลดเอกสารเสร็จสิ้น")
+      });
+        
+      }
+      );
+    }
+
+    function uploadimage2(){
+        alert("อัพโหลดเอกสารเสร็จสิ้น")
+    }
+</script>
+{% endblock %}

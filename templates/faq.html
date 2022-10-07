@@ -1,0 +1,142 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<style>
+
+@font-face {
+   font-family: 'Mitr';
+   src: url('/static/assets/fonts/Ubuntu/Mitr-Regular.ttf');
+}
+
+.block_info {
+    display: flex;
+    background-color: white;
+    border-radius: 10px;
+    color: black;
+    /* font-weight: bold; */
+    margin: 0px 33px 10px 33px;
+    padding: 21px;
+    font-family: 'Mitr';
+    font-size: larger;
+  }
+
+.backdrop_profile {
+    background-color: #f8f8f8;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    color: black;
+    font-family: 'Mitr';
+    font-size: larger;
+    padding-bottom: 60px;
+}
+    .backdrop_profile_head{
+        font-family: 'Mitr';
+        padding: 48px 0px 23px 29px;
+        font-size: 36px;
+    }
+
+.text_sub {
+    /* margin-left: 54px; */
+    font-size: 24px !important;
+
+}
+
+.collapsible {
+    background-color: #97559f;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 16px;
+    margin-bottom: 1px;
+    font-weight: bold;
+}
+
+.active, .collapsible:hover {
+  background-color: #7d3486;
+}
+
+.collapsible:after {
+  content: '\002B';
+  color: white;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+}
+
+.content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #ffffff;
+  font-weight: lighter;
+  color: #767676;
+}
+
+.text_main {
+    margin-left: 54px;
+}
+</style>
+
+<div class="backdrop_profile">
+    <div class="backdrop_profile_head">
+        คำถามที่พบบ่อย(FAQ) & ระเบียบวิทยากร
+    </div>
+    <!-- <div>
+        พื้นที่รวบรวมข้อสงสัยเกี่ยวกับงานบริการต่างๆของฝ่ายพัฒนาบุคลากรเพื่อตอบคำถามเบื้องต้นแก่พนักงานการไฟฟ้าส่วนภูมิภาคเกี่ยวกับระบบงานต่างๆแลพวิธีการใช้งาน เพื่อความสะดวกและรวดเร็วในการค้นหาข้อมูลการใช้งานะรบบและงานบริการต่างๆ
+    </div> -->
+    <div class="text_main">
+        <img src="/static/assets/images/arrow.svg" alt="arrow">
+        <a class="text_sub" href="https://drive.google.com/file/d/11cly6xFNZIDAnaX2MQQrLo7hRnyW4qW2/view?usp=sharing">ระเบียบฝึกอบรมปี 60</a>
+    </div>
+
+<!-- first block -->
+
+<div class="block_info">
+    <div>
+        <button class="collapsible">วิทยากรได้เงินเท่าไหร่ต่อชั่วโมง</button>
+            <div class="content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+        <button class="collapsible">จะสมัครวิทยากรได้ยังไง</button>
+            <div class="content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+        <button class="collapsible">สมัครแล้วจะได้ขึ้นทะเบียนเมื่อไหร่</button>
+            <div class="content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+        <button class="collapsible">สมัครแล้วมีหมดอายุไหม</button>
+            <div class="content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+    </div>
+</div>
+
+
+<script>
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+    
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.maxHeight){
+          content.style.maxHeight = null;
+        } else {
+          content.style.maxHeight = content.scrollHeight + "px";
+        } 
+      });
+    }
+</script>
+
+{% endblock %}
