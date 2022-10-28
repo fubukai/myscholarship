@@ -23,12 +23,12 @@
                             <a class="dropdown-item" href="#">
                                 <i class="mdi mdi-cached mr-2 text-success"></i> Activity Log </a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="{% url 'login' %}">
+                            <a class="dropdown-item" href="#">
                                 <i class="mdi mdi-logout mr-2 text-primary"></i> Signout </a>
                         </div>
                     </li>
                     <li class="nav-item nav-logout d-none d-lg-flex">
-                        <a class="nav-link" href="{% url 'login' %}">
+                        <a class="nav-link" href="#">
                             <i class="mdi mdi-power"></i>
                         </a>
                     </li>
@@ -49,7 +49,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'select' %}">
+                    <a class="nav-link" href="#">
                         <i class="mdi mdi-book-open-variant menu-icon"></i>
                         <span class="menu-title">หลักสูตรเสรี</span>
                     </a>
@@ -63,14 +63,14 @@
                 </li>
                 {% endif %}
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'virtualclass' %}">
+                    <a class="nav-link" href="#">
                         <i class="mdi mdi-calendar-text menu-icon"></i>
                         <span class="menu-title">กำหนดการสอน Virtual Class</span>
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a href="{% url 'feedback' %}" class="nav-link">
+                    <a href="#" class="nav-link">
                         <i class="mdi mdi-phone menu-icon"></i>
                         <span class="menu-title">ติดต่อสอบถาม</span></a>
                 </li>

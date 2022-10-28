@@ -5,4 +5,4 @@ def home(request):
     mgs = {
         'massage': ' '
     }
-    return render(request, 'home.html')
+    return render(request, 'question.html')

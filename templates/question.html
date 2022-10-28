@@ -1,0 +1,311 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<style>
+    @font-face {
+       font-family: 'Mitr';
+       src: url('/static/assets/fonts/Ubuntu/Mitr-Regular.ttf');
+    }
+    
+    .block_info {
+        display: flex;
+        background-color: white;
+        border-radius: 10px;
+        color: black;
+        font-weight: bold;
+        margin: 0px 33px 10px 33px;
+        padding: 21px;
+        font-family: 'Mitr';
+        font-size: larger;
+      }
+        .block_info_sub {
+            /* padding: 0px 21px 0px 21px; */
+            margin: 0px 0px 0px 33px;
+      }
+    
+    .backdrop_profile {
+        background-color: #f8f8f8;
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: bold;
+        color: black;
+        font-family: 'Mitr';
+        font-size: larger;
+        padding-bottom: 60px;
+    }
+    .backdrop_profile2 {
+        background-color: #f8f8f8;
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: bold;
+        color: black;
+        font-family: 'Mitr';
+        font-size: 24px;
+        padding-bottom: 60px;
+    }
+        .backdrop_profile_head{
+            font-family: 'Mitr';
+            color: white;
+            padding: 48px 0px 23px 29px;
+            background-color: #97559F;
+            font-size: 36px;
+        }
+        .backdrop_profile_head2{
+            background-color: #C4C4C4;
+            font-family: 'Mitr';
+            padding: 15px 0px 23px 29px;
+            font-size: 24px;
+            font-weight: lighter;
+        }
+        .title_group {
+            font-family: 'Mitr';
+            font-size: 24px;
+            font-weight: bold; 
+            color: black;
+        }
+        .detail_group {
+            font-family: 'Mitr';
+            font-size: 24px;
+            color: black;
+            padding: 25px;
+            /* font-weight: bold;  */
+        }
+    
+    .text_main {
+        margin-left: 54px;
+    }
+    .table{
+        padding: 0px 0px 0px 0px;
+    }
+    .row_head {
+        background-color: #7d3486;
+        color: white;
+        text-align: center;
+        border-color: white;
+    }
+    
+    .row_body1 {
+        background-color:lightgray;
+        color: black;
+    }
+    
+    .small_font {
+        font-weight: lighter;
+        font-size: 12px !important;
+        color: #312F2C;
+        margin-bottom: 12px;
+    }
+    input::placeholder{
+      color: #f00;
+    }
+    .head_font {
+        font-size: 12px; 
+        margin-bottom: 12px;
+    }
+    .modal {
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        align-items: 'center';
+        padding: 0% 25% 0% 25%;
+    }
+    .center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 50px;
+    }
+        .content {
+    padding: 0 18px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: #ffffff;
+    font-weight: lighter;
+    color: #767676;
+    }
+    .button {
+        border-radius : 50%;
+        background-color: #7d3486;
+       
+    }
+    .button2 {
+        border-radius : 50%;
+        background-color: #ffffff;
+       
+    }
+    .icon {
+      text-align: center;
+      
+     
+    }
+    .categories {
+      margin-left: center;
+      margin-right: center;
+      padding: 20px;
+      text-align: center;
+      font-family: 'Mitr';
+      color:#7d3486;
+      font-weight: bold;
+      font-size: 20px;
+      width: 200px;
+    }
+    .categories2 {
+      margin-left: center;
+      margin-right: center;
+      padding: 30px;
+      text-align: center;
+      font-family: 'Mitr';
+      color:#000000;
+      font-weight: bold;
+      font-size: 20px;
+      width: 200px;
+    }
+    .private {
+        display: 0;
+      margin-left: center;
+      margin-right: center;
+      padding: 1px;
+      text-align: center;
+    }
+    .lineformat {
+        size: 107*10;
+      /* margin-left: auto;
+      margin-right: auto; */
+      text-align: center;
+    }
+    
+        
+    </style>
+    <table>
+        <tr>
+
+        <td class="icon">
+            <button class="button"> <img src="../static/assets/images/product_images_2/Vector.png" alt=""> </button>
+        </td>
+
+        <td class="lineformat">
+            <img src="../static/assets/images/product_images_2/Line 459.png" alt=""> 
+        </td>
+
+        <td class="icon">
+            <button class="button2"> <img src="../static/assets/images/product_images_2/icon2.png" alt=""> </button>
+        </td>
+
+        <td class="lineformat">
+            <img src="../static/assets/images/product_images_2/Line 459.png" alt=""> 
+        </td>
+
+        <td class="icon">
+            <button class="button2"> <img src="../static/assets/images/product_images_2/education.png" alt=""> </button>
+        </td>
+
+        <td class="lineformat">
+            <img src="../static/assets/images/product_images_2/Line 459.png" alt=""> 
+        </td>
+
+        <td class="icon">
+            <button class="button2"> <img src="../static/assets/images/product_images_2/icon3.png" alt=""> </button>
+        </td>
+
+        <td class="lineformat">
+            <img src="../static/assets/images/product_images_2/Line 459.png" alt=""> 
+        </td>
+
+        <td class="icon">
+            <button class="button2"> <img src="../static/assets/images/product_images_2/icon3.png" alt=""> </button>
+        </td>
+        <td>
+        </td>
+        <td>
+        </td>
+
+        </tr>
+       
+        <tr>
+        
+            <td class="categories">เลือกประเภททุน</td>
+            <td></td>
+            <td class="categories">ข้อมูลส่วนตัว</td>
+            <td></td>
+            <td class="categories">ประวัติการศึกษา</td>
+            <td></td>
+            <td class="categories">ข้อมูลการขอรับทุน</td>
+            <td></td>
+            <td class="categories">ข้อมูลงานวิจัย</td>
+        </tr>
+    </table>
+
+    <div class="backdrop_profile"> 
+        <div class="backdrop_profile_head">
+            แบบทดสอบ
+        </div> 
+    </div>
+        <div class="content-wrapper">
+            <div class="col-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <form class="forms-sample">
+                            <table class="table">
+                                    <tr >
+                                        <td >
+                                            <div class="row">
+                                                <div class="col-12">1. คำถามมมมม </div>
+                                            </div>
+                                            </br>
+                                            <div class="row">
+                                                <div class="col-1"></div>
+                                                <div class="col-5"><label class="form-check-label"><input type="radio" class="form-check-input"/>  คำตอบ 1</label></div>
+                                                <div class="col-1"></div>
+                                                <div class="col-5">คำตอบ 2</div>
+                                            </div>
+                                            </br>
+                                            <div class="row">
+                                                <div class="col-1"></div>
+                                                <div class="col-5">คำตอบ 3</div>
+                                                <div class="col-1"></div>
+                                                <div class="col-5">คำตอบ 4</div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr >
+                                        <td >
+                                            <div class="row">
+                                                <div class="col-12">2. คำถามมมมม </div>
+                                            </div>
+                                            </br>
+                                            <div class="row">
+                                                <div class="col-1"></div>
+                                                <div class="col-5">คำตอบ 1</div>
+                                                <div class="col-1"></div>
+                                                <div class="col-5">คำตอบ 2</div>
+                                            </div>
+                                            </br>
+                                            <div class="row">
+                                                <div class="col-1"></div>
+                                                <div class="col-5">คำตอบ 3</div>
+                                                <div class="col-1"></div>
+                                                <div class="col-5">คำตอบ 4</div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td class="row">
+                                                <div class="col-4 text-center"><button type ="button" class = "btn btn-primary btn-fw"> ส่งคำตอบ</button></div>
+                                                
+                                                <div class="col-4 text-center"><button type ="button" class = "btn btn-primary btn-fw"> ยกเลิก</button></div> 
+                                        </td>
+                                    </tr>
+                                        
+                            </table>
+                            
+                        </form>
+                    </div>
+                </div>
+               
+        </div>
+    
+    </div>
+
+
+                          
+{% endblock %}
